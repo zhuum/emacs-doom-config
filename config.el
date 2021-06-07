@@ -21,7 +21,7 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-(setq doom-font (font-spec :family "Fira Mono for Powerline" :size 16))
+(setq doom-font (font-spec :family "Fira Code" :size 20))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -63,3 +63,17 @@
 (setq auth-sources '("~/.authinfo"))
 (setq github.user "zhuum"
       github.HOST.user "zhuum")
+
+(setq delete-by-moving-to-trash t)
+
+;; Set our nickname & real-name as constant variables
+(setq
+ erc-nick "Marcuus"     ; Our IRC nick
+ erc-user-full-name "Marcus McKinnon") ; Our /whois name
+
+;; Define a function to connect to a server
+(defun libera-chat ()
+  (lambda ()
+  (interactive)
+  (erc :server "irc.libera.chat"
+       :port   "6697")))
