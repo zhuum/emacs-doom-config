@@ -66,14 +66,20 @@
 
 (setq delete-by-moving-to-trash t)
 
-;; Set our nickname & real-name as constant variables
-(setq
- erc-nick "Marcuus"     ; Our IRC nick
- erc-user-full-name "Marcus McKinnon") ; Our /whois name
+;; IRC config
+(setq erc-server "irc.libera.chat"
+        erc-nick "Marcuus"     ; Our IRC nick
+        erc-user-full-name "Marcus McKinnon" ; Our /whois name
+        erc-track-shorten-start 8
+        erc-autojoin-channels-alist '(("#systemcrafters"))
+        erc-kill-buffer-on-part t
+        erc-auto-query 'bury)
 
-;; Define a function to connect to a server
-(defun libera-chat ()
-  (lambda ()
-  (interactive)
-  (erc :server "irc.libera.chat"
-       :port   "6697")))
+(setq erc-fill-column 120
+      erc-fill-function 'erc-fill-static
+      erc-fill-static-center 30)
+
+(setq erc-track-exclude '("irc.libera.chat" "#systemcrafters")
+      erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE" "AWAY")
+      erc-hide-list '("JOIN" "NICK" "PART" "QUIT" "MODE" "AWAY")
+      erc-track-exclude-server-buffer t)
