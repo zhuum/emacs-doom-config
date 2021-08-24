@@ -83,3 +83,7 @@
       erc-track-exclude-types '("JOIN" "NICK" "PART" "QUIT" "MODE" "AWAY")
       erc-hide-list '("JOIN" "NICK" "PART" "QUIT" "MODE" "AWAY")
       erc-track-exclude-server-buffer t)
+
+(setq org-roam-directory "~/org/roam")
+
+(setq python-black-on-save-mode t)
